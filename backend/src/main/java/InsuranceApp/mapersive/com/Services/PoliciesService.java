@@ -14,5 +14,7 @@ public interface PoliciesService {
     Policies getPolicieById(String id);
     Collection<Policies> getAllPolicies();
     Page<Policies> getAllPolicies(Pageable pageable);
+    Page<Policies> getAllPoliciesByCustomer(int id,Pageable pageable);
+    Page<Policies> getPolicies(Pageable pageable);
 
 }

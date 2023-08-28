@@ -1,23 +1,29 @@
 import { Component } from '@angular/core';
-import { PolicyService } from 'src/app/service/policy.service';
 import { Page } from 'src/app/Model/page';
+import { PolicyService } from 'src/app/service/policy.service';
+import { CustomerInfoDialogComponent } from '../customer-info-dialog/customer-info-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon'
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-tab',
+  templateUrl: './tab.component.html',
+  styleUrls: ['./tab.component.css']
 })
-export class CardComponent {
-  page: Page | null = null;
-  filterd: Page | null = null;
+export class TabComponent {
+  head: string[] = ["policyId","bodily Injury Liability","collision","comprehensive","date Of Purchase","fuel","personal Injury Protection","premium","property Damage Liability","vehicle Segment","customer"];
+  mobileTab: number[] = [];
   policyNameFilter: string | null = null;
+  page: Page | null = null;
   currentPage = 0;
   pageSize = 10;
-  constructor(private policyService: PolicyService) {}
+  dataSource: any;
+  filterd: Page | null = null;
+  pageCus: Page | null = null;
+  constructor(private policyService: PolicyService,private dialog: MatDialog) {}
 
   i = 0;
   ngOnInit(): void {
     this.fetchPolicies(0,"null");
-    console.log(this.page)
   }
 
   fetchPolicies(i:number,sortOrder: string) {
@@ -87,4 +93,21 @@ export class CardComponent {
       this.fetchPolicies(this.i,"null");
     }
   }
+  showCustomer(customer:any){
+    this.Openpopup(customer, 'Add Customer',CustomerInfoDialogComponent);
+  }
+
+  Openpopup(code: any, title: any,component:any) {
+    var _popup = this.dialog.open(component, {
+      enterAnimationDuration: '100ms',
+      exitAnimationDuration: '100ms',
+      data: {
+        code: code
+      }
+    });
+    _popup.afterClosed().subscribe(item => {
+      console.log(item)
+    })
+  }
+
 }

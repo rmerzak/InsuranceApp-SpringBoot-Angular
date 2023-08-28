@@ -1,0 +1,45 @@
+<div class="head">
+<input type="text" [(ngModel)]="policyNameFilter" placeholder="Filter by Customer" (change)="filter()">
+<div>
+  <button class="buthead" (click)="sortDateOfPurchase('asc')">Sort by date Of Purchase</button>
+  <button class="buthead" (click)="sortDateOfPurchaseByPremium('asc')">Sort by premium</button>
+</div>
+
+</div>
+  <table>
+    <thead>
+      <tr>
+          <th>policyId</th>
+          <th class="hide-mobile">bodily Injury Liability</th>
+          <th class="hide-mobile">collision</th>
+          <th class="hide-mobile">comprehensive</th>
+          <th>date Of Purchase</th>
+          <th class="hide-mobile">fuel</th>
+          <th class="hide-mobile">personal Injury Protection</th>
+          <th>premium</th>
+          <th class="hide-mobile">property Damage Liability</th>
+          <th class="hide-mobile">vehicle Segment</th>
+          <th>customer</th>
+      </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let policy of filterd?.content">
+                <td>{{ policy.policyId }}</td>
+                <td class="hide-mobile">{{ policy.bodilyInjuryLiability }}</td>
+                <td class="hide-mobile">{{ policy.collision }}</td>
+                <td class="hide-mobile">{{ policy.comprehensive }}</td>
+                <td>{{ policy.dateOfPurchase.slice(0,10) }}</td>
+                <td class="hide-mobile">{{ policy.fuel }}</td>
+                <td class="hide-mobile">{{ policy.personalInjuryProtection }}</td>
+                <td>{{ policy.premium }}</td>
+                <td class="hide-mobile">{{ policy.propertyDamageLiability }}</td>
+                <td class="hide-mobile">{{ policy.vehicleSegment }}</td>
+                <td class="customerInfo">{{ policy.customer.customerId }}<mat-icon style="margin-left: 0.5rem; color: #3f51b5;" (click)="showCustomer(policy.customer)">remove_red_eye</mat-icon></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="bottom">
+            <button class="buthead" (click)="prevPage()">Previous</button>
+            <div class="sp" *ngIf="filterd">Page {{ filterd.pageable.pageNumber + 1 }} of {{ filterd.totalPages }}</div>
+            <button class="buthead" (click)="nextPage()">Next</button>
+        </div>

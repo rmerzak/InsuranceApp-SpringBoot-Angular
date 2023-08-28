@@ -1,19 +1,56 @@
-
-<mat-card class="card-class">
+<div class="head">
+    <input type="text" [(ngModel)]="policyNameFilter" placeholder="Filter by Customer" (change)="filter()">
+    <div>
+<div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+<div class="containerh" >
+<mat-card class="card-class" *ngFor="let policy of filterd?.content">
     <mat-card-header>
-        <mat-card-title>rmerzak</mat-card-title>
-        <mat-card-subtitle>Angular 15 - Material UI</mat-card-subtitle>
+        <mat-card-title>Policy Id : {{policy.policyId}}</mat-card-title>
+        <mat-card-subtitle>Customer Id: {{policy.customer.customerId}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-sm-image src="https://angular.io/assets/images/logos/angular/angular.svg"/>
     <mat-card-content>
-        <p>
-            Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps.
-        </p>
+        <div class="container">
+            <div class="div">
+                <div class="title">Gender :</div>
+                <div class="data">{{policy.customer.customerGender}}</div>
+                <div class="title">Premium :</div>
+                <div class="data">{{policy.premium}}</div>
+                <div class="title">Fuel :</div>
+                <div class="data">{{policy.fuel}}</div>
+                <div class="title">Injury protection :</div>
+                <div class="data">{{policy.personalInjuryProtection ? 'active' : 'inactive'}}</div>
+                <div class="title">damage liability :</div>
+                <div class="data">{{policy.propertyDamageLiability ? 'active' : 'inactive'}}</div>
+            </div>
+            <div class="div">
+                <div class="title">Marital Status :</div>
+                <div class="data">{{policy.customer.customerMaritalStatus}}</div>
+                <div class="title">IncomeGroup :</div>
+                <div class="data">{{policy.customer.customerIncomeGroup}}</div>
+                <div class="title">Region :</div>
+                <div class="data">{{policy.customer.customerRegion}}</div>
+                <div class="title">injury liability :</div>
+                <div class="data">{{policy.bodilyInjuryLiability ? 'Yes' : 'No'}}</div>
+                <div class="title">collision :</div>
+                <div class="data">{{policy.collision ? 'Yes' : 'No'}}</div>
+            </div>
+        </div>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button><mat-icon>thumb_up</mat-icon> Like</button>
-        <button mat-button><mat-icon>share</mat-icon> Share</button>
+    <mat-card-actions style="display: flex;justify-content: right;">
+        <button mat-fab style="background-color:red;"><mat-icon>bug_report</mat-icon></button>
+        <button mat-fab style="background-color:#f80;"><mat-icon>grade</mat-icon></button>
+        <button mat-fab style="background-color:#cccccc;"><mat-icon>report_off</mat-icon></button>
+        <button mat-fab color="primary"><mat-icon>visibility</mat-icon></button>
+        <button mat-fab style="background-color:#99ff99;"><mat-icon>update</mat-icon></button>
     </mat-card-actions>
-    <mat-card-footer></mat-card-footer>
+    <mat-card-footer>
+    </mat-card-footer>
 </mat-card>
+</div>
 
+<div class="bottom">
+    <button class="buthead" (click)="prevPage()">Previous</button>
+    <div class="sp" *ngIf="filterd">Page {{ filterd.pageable.pageNumber + 1 }} of {{ filterd.totalPages }}</div>
+    <button class="buthead" (click)="nextPage()">Next</button>
+</div>
+</div>

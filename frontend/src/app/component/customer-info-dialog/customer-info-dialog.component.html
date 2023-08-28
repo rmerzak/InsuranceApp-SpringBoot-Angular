@@ -1,0 +1,25 @@
+<div class="head">
+<div class='titlex'>Customer informations :</div>
+<div class="container">
+    <div class="div">
+        <div class="title">Customer Name :</div>
+        <div class="data">none</div>
+        <div class="title">Customer Id :</div>
+        <div class="data">{{inputdata.code.customerId}}</div>
+        <div class="title">Customer Gender :</div>
+        <div class="data">{{inputdata.code.customerGender}}</div>
+    </div>
+    <div class="div">
+        <div class="title">Customer Marital Status :</div>
+        <div class="data">{{inputdata.code.customerMaritalStatus}}</div>
+        <div class="title">Customer IncomeGroup :</div>
+        <div class="data">{{inputdata.code.customerIncomeGroup}}</div>
+        <div class="title">Customer Region :</div>
+        <div class="data">{{inputdata.code.customerRegion}}</div>
+    </div>
+</div>
+<div mat-dialog-actions class="divbut">
+    <a (click)="closepopup()" mat-raised-button color="warn">Close</a>
+</div>
+
+</div>

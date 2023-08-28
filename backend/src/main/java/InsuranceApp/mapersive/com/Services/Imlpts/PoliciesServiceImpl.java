@@ -39,4 +39,15 @@ public class PoliciesServiceImpl implements PoliciesService {
     @Override
     public Page<Policies> getAllPolicies(Pageable pageable) {
         return policiesRepository.findAll(pageable);    }
+
+    @Override
+    public Page<Policies> getAllPoliciesByCustomer(int id, Pageable pageable) {
+        return policiesRepository.findByCustomerCustomerId(id,pageable);
+    }
+
+    @Override
+    public Page<Policies> getPolicies(Pageable pageable) {
+        return policiesRepository.findAll(pageable);
+    }
+
 }
