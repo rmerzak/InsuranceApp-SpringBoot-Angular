@@ -68,11 +68,11 @@ This project involves creating a web application that manages insurance data. Th
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/table%20big2.png?raw=true)
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/filter%20customer%202.png?raw=true)
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/filter%20customer.png?raw=true)
-![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/table%20mobile.png?raw=true)
+![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/table%20mobilee.png?raw=true)
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/mobile%20version.png?raw=true)
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/dialog.png?raw=true)
-![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/dialog%20mobile.png?raw=true)
+![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/dialog%20mobilee.png?raw=true)
 ![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/card.png?raw=true)
-![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/cardMobile.png?raw=true)
+![](https://github.com/rmerzak/InsuranceApp-SpringBoot-Angular/blob/main/imgs/cardMobilee.png?raw=true)
 
 
